@@ -1,0 +1,13 @@
+<ncs-package xmlns="http://tail-f.com/ns/ncs-packages">
+  <name>onthefly-template-generator</name>
+  <package-version>2.0</package-version>
+  <description>On-the-fly Configuration Template Generator</description>
+  <ncs-min-version>5.5</ncs-min-version>
+
+  <component>
+    <name>main</name>
+    <application>
+      <python-class-name>onthefly_template_generator.main.Main</python-class-name>
+    </application>
+  </component>
+</ncs-package>

@@ -1,0 +1,66 @@
+module onthefly-template-generator {
+
+  namespace "http://cisco.com/onthefly-template-generator";
+  prefix onthefly-template-generator;
+
+  import ietf-inet-types {
+    prefix inet;
+  }
+  import tailf-common {
+    prefix tailf;
+  }
+  import tailf-ncs {
+    prefix ncs;
+  }
+
+  description
+    "On-the-fly Template Generator.
+    The purpose of this package is to create configuration templates dynamically based on the input raw configuration. The template is stored in CDB and is ready for use with the devices compliant with the specified NED package.";
+
+  revision 2022-01-31 {
+    description
+      "Stable release OK.";
+  }
+
+  container onthefly-template-generator {
+    tailf:action generate {
+      tailf:info "On-the-fly Template Generator";
+      tailf:actionpoint onthefly-template-generator-action;
+
+      input {
+
+        leaf native-configuration {
+          tailf:info "CLI raw native configuration for template creation.";
+          tailf:cli-multi-line-prompt;
+          type string;
+          mandatory true;
+        }
+
+        leaf template-name {
+          tailf:info "New template name.";
+          type string;
+          mandatory true;
+        }
+
+        leaf ned-id {
+            tailf:info "Device ned-id to create device template.";       
+            type leafref {
+              path "/ncs:devices/ncs:device/ncs:device-type/ncs:cli/ncs:ned-id";
+            }
+           mandatory true;
+        }
+      }
+      output {
+        leaf result {
+            type enumeration {
+                enum SUCCESS;
+                enum FAILED;
+            }
+        }
+        leaf info {
+            type string;
+        }
+      }
+    }
+  }
+}
