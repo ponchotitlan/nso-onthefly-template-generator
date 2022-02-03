@@ -2,27 +2,29 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/ponchotitlan/nso-onthefly-template-generator)
 
 This action package creates a new device template in NSO CDB by parsing input CLI native configurations into template-friendly XML outputs.
 
 The action package creates a temporary dummy device which is used for parsing the input configuration into compliant XML payload, which is later pushed into CDB as a device template ready for use. The temporary dummy device is deleted afterwards.
 
 ```
-Action package
-┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                                                                                        │
-│                        ___________________                          _______________    │
-│                       │                   │                        │               │   │
-│                       │  Temporary        │                        │               │   │
-│   Raw CLI             │  dummy device     │  XML payload           │               │   │
-│   configurations ────►│  created with     ├───────────────────────►│  NCS CDB      │   │
-│   (multi-line)        │  the specified    │         New device     │               │   │
-│                       │  NED              │         template       │               │   │
-│                       │                   │                        │               │   │
-│                       │                   │                        └───────────────┘   │
-│                       └───────────────────┘                                            │
-│                                                                                        │
-└────────────────────────────────────────────────────────────────────────────────────────┘
+         Action package
+        +--------------------------------------------------------------------+                                 
+        |                                                                    |                                 
+        |                   +-----------------+                              |                                 
+        |                   |                 |                              |                                 
+        |                   |                 | Device template              |                                 
+        |  Raw CLI config   |  Temporary      | compliant      +----------+  |                                 
+        |  (multi-line)     |  dummy device   | XML payload    |          |  |                                 
+        |  ---------------->-  created with   |--------------->| NSO CDB  |  |                                 
+        |                   |  the specified  |                |          |  |                                 
+        |                   |  NED            |                +----------+  |                                 
+        |                   |                 |                              |                                 
+        |                   |                 |                              |                                 
+        |                   +-----------------+                              |                                 
+        |                                                                    |                                 
+        +--------------------------------------------------------------------+ 
 ```
 
 ## Prerequisites
