@@ -9,22 +9,22 @@ This action package creates a new device template in NSO CDB by parsing input CL
 The action package creates a temporary dummy device which is used for parsing the input configuration into compliant XML payload, which is later pushed into CDB as a device template ready for use. The temporary dummy device is deleted afterwards.
 
 ```
-         Action package
-        +--------------------------------------------------------------------+                                 
-        |                                                                    |                                 
-        |                   +-----------------+                              |                                 
-        |                   |                 |                              |                                 
-        |                   |                 | Device template              |                                 
-        |  Raw CLI config   |  Temporary      | compliant      +----------+  |                                 
-        |  (multi-line)     |  dummy device   | XML payload    |          |  |                                 
-        |  ---------------->-  created with   |--------------->| NSO CDB  |  |                                 
-        |                   |  the specified  |                |          |  |                                 
-        |                   |  NED            |                +----------+  |                                 
-        |                   |                 |                              |                                 
-        |                   |                 |                              |                                 
-        |                   +-----------------+                              |                                 
-        |                                                                    |                                 
-        +--------------------------------------------------------------------+ 
+   Action package
+  +--------------------------------------------------------------------+                                 
+  |                                                                    |                                 
+  |                   +-----------------+                              |                                 
+  |                   |                 |                              |                                 
+  |                   |                 | Device template              |                                 
+  |  Raw CLI config   |  Temporary      | compliant      +----------+  |                                 
+  |  (multi-line)     |  dummy device   | XML payload    |          |  |                                 
+  |  ---------------->-  created with   |--------------->| NSO CDB  |  |                                 
+  |                   |  the specified  |                |          |  |                                 
+  |                   |  NED            |                +----------+  |                                 
+  |                   |                 |                              |                                 
+  |                   |                 |                              |                                 
+  |                   +-----------------+                              |                                 
+  |                                                                    |                                 
+  +--------------------------------------------------------------------+ 
 ```
 
 ## Prerequisites
