@@ -10,21 +10,21 @@ The action package creates a temporary dummy device which is used for parsing th
 
 ```
    Action package
-  +--------------------------------------------------------------------+                                 
-  |                                                                    |                                 
-  |                   +-----------------+                              |                                 
-  |                   |                 |                              |                                 
-  |                   |                 | Device template              |                                 
-  |  Raw CLI config   |  Temporary      | compliant      +----------+  |                                 
-  |  (multi-line)     |  dummy device   | XML payload    |          |  |                                 
-  |  ---------------->-  created with   |--------------->| NSO CDB  |  |                                 
-  |                   |  the specified  |                |          |  |                                 
-  |                   |  NED            |                +----------+  |                                 
-  |                   |                 |                              |                                 
-  |                   |                 |                              |                                 
-  |                   +-----------------+                              |                                 
-  |                                                                    |                                 
-  +--------------------------------------------------------------------+ 
+  +---------------------------------------------------------------------+
+  |                                                                     | 
+  |                   +-----------------+                               | 
+  |                   |                 |                               | 
+  |                   |                 | Device template               | 
+  |  Raw CLI config   |  Temporary      | compliant      +-----------+  | 
+  |  (multi-line)     |  dummy device   | XML payload    |           |  | 
+  |  ---------------->-  created with   |--------------->|  NSO CDB  |  | 
+  |                   |  the specified  |                |           |  | 
+  |                   |  NED            |                +-----------+  | 
+  |                   |                 |                               | 
+  |                   |                 |                               | 
+  |                   +-----------------+                               | 
+  |                                                                     | 
+  +---------------------------------------------------------------------+ 
 ```
 
 ## Prerequisites
